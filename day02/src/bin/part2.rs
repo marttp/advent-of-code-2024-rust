@@ -11,7 +11,7 @@ fn main() {
 fn solution(input: Vec<&str>) -> u32 {
     let reports = input
         .into_iter()
-        .map(|line| line.split(' ').map(|w| w.parse::<u32>().unwrap()).collect())
+        .map(|line| line.split_whitespace().map(|w| w.parse::<u32>().unwrap()).collect())
         .collect::<Vec<Vec<u32>>>();
     let safe_list = reports
         .iter()
