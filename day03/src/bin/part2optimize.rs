@@ -2,7 +2,6 @@ mod common;
 
 use common::split_lines;
 use regex::Regex;
-use std::collections::VecDeque;
 
 fn main() {
     let input = include_str!("./input3.txt");
