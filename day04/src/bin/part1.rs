@@ -1,7 +1,7 @@
 mod common;
 
 use common::split_lines;
-use crate::common::DIAG_DIRECTIONS;
+use common::DIAG_DIRECTIONS;
 
 fn main() {
     let input = include_str!("./input4.txt");
