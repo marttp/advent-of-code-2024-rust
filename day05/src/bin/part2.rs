@@ -36,11 +36,9 @@ fn fix_positions(u: &Vec<i32>, rule_map: &HashMap<i32, HashSet<i32>>) -> Vec<i32
     let set = u.iter().collect::<HashSet<_>>();
     for i in 0..u.len() {
         if let Some(rule_set) = rule_map.get(&u[i]) {
-            for &allow_target in rule_set.iter() {
-                if set.contains(&allow_target) {
-                    *in_degrees.entry(allow_target).or_insert(0) += 1;
-                }
-            }
+            rule_set.iter()
+                .filter(|&&target| set.contains(&target))
+                .for_each(|&target| *in_degrees.entry(target).or_insert(0) += 1);
         }
     }
 
