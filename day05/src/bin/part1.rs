@@ -1,7 +1,7 @@
 mod common;
 
 use std::collections::{HashMap, HashSet};
-use common::split_lines;
+use common::{split_lines, extract_rules_updates};
 
 fn main() {
     let input = include_str!("./input5.txt");
@@ -10,22 +10,7 @@ fn main() {
 }
 
 fn solution(input: Vec<&str>) -> i32 {
-    let mut rules: Vec<&str> = Vec::new();
-    let mut updates: Vec<&str> = Vec::new();
-    let mut is_received_update: bool = false;
-    for line in input {
-        match line.is_empty() {
-            true => is_received_update = true,
-            _ => {
-                if is_received_update {
-                    updates.push(line);
-                } else {
-                    rules.push(line);
-                }
-            }
-        }
-    }
-
+    let (rules, updates) = extract_rules_updates(input.clone());
     let mut rule_map: HashMap<i32, HashSet<i32>> = HashMap::new();
     for rule in rules {
         let order_rule: Vec<i32> = rule.split('|')
