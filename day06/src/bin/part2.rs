@@ -76,7 +76,7 @@ fn try_path_with_obstacle(
         }
 
         if !visited.insert(current) {
-            grid[obstacle_pos.0][obstacle_pos.1] = '.';
+            grid[obstacle_pos.0][obstacle_pos.1] = EMPTY;
             return true;
         }
     }
