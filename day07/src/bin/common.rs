@@ -39,7 +39,7 @@ pub fn validate_equation(equation_result: u64, num_list: &Vec<u64>, idx: usize, 
     }
 
     if is_third_operator {
-        // Concatenation here, Doesn't mean alway single digit
+        // Concatenation here, Doesn't mean always single digit
         let mut digits = num_list[idx];
         let mut multiplier = 1;
         while digits > 0 {
