@@ -13,7 +13,7 @@ fn solution(input: Vec<&str>) -> u64 {
     eq_results
         .iter()
         .zip(numbers.iter())
-        .filter(|(eq, num_list)| validate_equation(**eq, num_list, 1, num_list[0], false))
+        .filter(|(eq, num_list)| validate_equation(**eq, num_list, 1, num_list[0], true))
         .map(|(eq, _)| eq)
         .sum()
 }
