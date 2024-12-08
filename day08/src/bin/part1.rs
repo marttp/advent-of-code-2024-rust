@@ -1,6 +1,6 @@
 mod common;
 
-use crate::common::split_lines;
+use crate::common::{is_inbounds, split_lines};
 use std::collections::HashSet;
 use std::usize;
 
@@ -52,7 +52,7 @@ fn mark_resonant(
                 } else {
                     c as i32 + diff_col as i32
                 };
-                if is_inbounds(&grid, nr, nc)&& seen.insert((nr as usize, nc as usize))  {
+                if is_inbounds(&grid, nr, nc) && seen.insert((nr as usize, nc as usize))  {
                     result += 1
                 }
                 let fr = found_row as i32 - diff_row as i32;
@@ -68,14 +68,4 @@ fn mark_resonant(
         }
     }
     result
-}
-
-fn is_inbounds(grid: &Vec<Vec<char>>, r: i32, c: i32) -> bool {
-    r >= 0 && r < grid.len() as i32 && c >= 0 && c < grid[0].len() as i32
-}
-
-fn count_resonant(grid: &Vec<Vec<char>>) -> u32 {
-    grid.iter()
-        .map(|line| line.iter().filter(|c| **c == RESONANT).count() as u32)
-        .sum()
 }
