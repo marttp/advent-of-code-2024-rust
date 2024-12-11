@@ -20,8 +20,9 @@ fn solution(input: Vec<&str>) -> u64 {
     for i in initial_input {
         *stones.entry(i).or_default() += 1;
     }
-    for _ in 0..25 {
+    for _ in 0..75 {
         stones = blink(&stones);
     }
     stones.values().sum()
 }
+
