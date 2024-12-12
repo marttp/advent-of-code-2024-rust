@@ -4,7 +4,7 @@ use crate::common::split_lines;
 use std::collections::HashSet;
 
 const MARKED: char = '#';
-pub const DIRECTIONS: [(i64, i64); 4] = [(-1, 0), (1, 0), (0, -1), (0, 1)];
+const DIRECTIONS: [(i64, i64); 4] = [(-1, 0), (1, 0), (0, -1), (0, 1)];
 
 fn main() {
     let input = include_str!("input12.txt");
