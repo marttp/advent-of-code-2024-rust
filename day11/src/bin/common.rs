@@ -14,10 +14,10 @@ pub fn blink(stones: &HashMap<u64, u64>) -> HashMap<u64, u64> {
             let digits = stone.ilog10() + 1;
             if digits % 2 == 0 {
                 let magnitude = 10u64.pow(digits / 2);
-                // Left
+                // Right
                 *new.entry(stone % magnitude)
                     .or_default() += amount;
-                // Right
+                // Left
                 *new.entry(stone / magnitude)
                     .or_default() += amount;
             } else {
