@@ -10,8 +10,7 @@ pub fn blink(stones: &HashMap<u64, u64>) -> HashMap<u64, u64> {
         if *stone == 0 {
             *new.entry(1).or_default() += amount;
         } else {
-            // Log10 + 1 to find number of digit
-            let digits = stone.ilog10() + 1;
+            let digits = stone.to_string().len() as u32;
             if digits % 2 == 0 {
                 let magnitude = 10u64.pow(digits / 2);
                 // Right
