@@ -22,13 +22,3 @@ fn solution(input: Vec<&str>, m: usize, n: usize) -> String {
 
     "0,0".to_string()
 }
-
-#[allow(dead_code)]
-fn display(grid: &Vec<Vec<char>>) {
-    for row in grid.iter() {
-        for cell in row.iter() {
-            print!("{}", cell);
-        }
-        println!();
-    }
-}

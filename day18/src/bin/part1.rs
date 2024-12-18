@@ -11,13 +11,3 @@ fn main() {
 fn solution(input: Vec<&str>, m: usize, n: usize) -> u64 {
     shortest_path(input, m, n, 1024)
 }
-
-#[allow(dead_code)]
-fn display(grid: &Vec<Vec<char>>) {
-    for row in grid.iter() {
-        for cell in row.iter() {
-            print!("{}", cell);
-        }
-        println!();
-    }
-}

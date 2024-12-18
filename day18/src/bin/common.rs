@@ -2,7 +2,6 @@ use std::collections::VecDeque;
 
 const EMPTY: char = '.';
 const OBSTACLE: char = '#';
-
 const DIRECTIONS: [(i32, i32); 4] = [(-1, 0), (1, 0), (0, -1), (0, 1)];
 
 pub fn split_lines(input: &str) -> Vec<&str> {
