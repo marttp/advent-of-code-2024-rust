@@ -1,0 +1,8 @@
+[package]
+name = "day20"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rayon = "1.10.0"
+pathfinding = "4.12.0"
