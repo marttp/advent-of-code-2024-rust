@@ -1,6 +1,6 @@
 mod common;
 
-use crate::common::split_lines;
+use crate::common::{split_lines, GateCombination};
 use std::collections::{HashMap, VecDeque};
 fn main() {
     let input = include_str!("input24.txt");
@@ -79,18 +79,4 @@ fn solution(input: Vec<&str>) -> u64 {
         }
     }
     result
-}
-
-#[derive(Debug, Clone)]
-struct GateCombination {
-    pub a: String,
-    pub b: String,
-    pub gate: String,
-    pub output: String,
-}
-
-impl GateCombination {
-    fn new(a: String, b: String, gate: String, output: String) -> GateCombination {
-        GateCombination { a, b, gate, output }
-    }
 }
